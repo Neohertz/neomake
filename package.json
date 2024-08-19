@@ -1,6 +1,7 @@
 {
 	"name": "@rbxts/neomake",
-	"version": "1.0.1",
+	"version": "1.0.2",
+	"repository": "https://github.com/Neohertz/neomake",
 	"description": "",
 	"main": "out/init.lua",
 	"scripts": {
@@ -9,8 +10,8 @@
 		"prepublishOnly": "npm run build"
 	},
 	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"author": "Neohertz",
+	"license": "MIT",
 	"types": "out/index.d.ts",
 	"files": [
 		"out",
