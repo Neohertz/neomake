@@ -62,9 +62,6 @@ export function make(item: unknown, val: TableOrFunction<WithChildren<unknown>, 
 		props = val;
 	}
 
-	/**
-	 * NOTE: We need to do this as children should be added last.
-	 */
 	let hasChildren = false;
 	for (const [k, v] of entries(props as object)) {
 		if (k === "children") {
@@ -91,6 +88,15 @@ export function make(item: unknown, val: TableOrFunction<WithChildren<unknown>, 
 	return instance;
 }
 
+/**
+ * Modify an instance.
+ *
+ * ```ts
+ * modify(new Instance("Part"), {
+ * 	position: Vector3.zero
+ * })
+ * ```
+ */
 export function modify<T extends Instance>(instance: T, props: Partial<WritableInstanceProperties<T>>): T {
 	for (const [k, v] of entries(props as object)) {
 		instance[k] = v!;
